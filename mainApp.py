@@ -1,6 +1,16 @@
 from tkinter import *
 from tkinter import ttk
 
+main_file_path = 'C:\\Users\\Cyr1lfiggus1\\PycharmProjects\\SquadronReadinessPython'
+
+
+class MainClass(object):
+    def __init__(self):
+        pass
+
+    def get_path(self):
+        return main_file_path
+
 
 def enable_text():
     firstEntry.config(state='normal')
