@@ -57,16 +57,19 @@ Radiobutton(root, variable=a, text='Fire 2-3', value='fire23').grid(row=2, colum
 Radiobutton(root, variable=a, text='Fire 2-4', value='fire24').grid(row=2, column=3)
 
 fitness_report = []
+
+
 def get_button_selected(a):
     selection = a.get()
     print('button pushed', selection)
     if selection == 'squad1':
         fitness_report = reports.process_fitness(squad1, main_file_path+'Fitness.xls')
-
-print(fitness_report)
+        print(fitness_report)
 
 
 process_button = Button(root, text='Process reports', command=lambda: get_button_selected(a))
+
+
 process_button.grid(row=5)
 # button = Button(frame, text='b1').pack(side=LEFT, fill=Y)
 # button = Button(frame, text='b2').pack(side=TOP, fill=X)
