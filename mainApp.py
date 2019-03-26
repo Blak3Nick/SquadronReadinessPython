@@ -2,6 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 from assignMembers import assign_members
+import reports
 
 main_file_path = 'C:\\Users\\Cyr1lfiggus1\\PycharmProjects\\SquadronReadinessPython\\'
 
@@ -55,10 +56,14 @@ Radiobutton(root, variable=a, text='Fire 2-2', value='fire22').grid(row=2, colum
 Radiobutton(root, variable=a, text='Fire 2-3', value='fire23').grid(row=2, column=2)
 Radiobutton(root, variable=a, text='Fire 2-4', value='fire24').grid(row=2, column=3)
 
-
+fitness_report = []
 def get_button_selected(a):
     selection = a.get()
     print('button pushed', selection)
+    if selection == 'squad1':
+        fitness_report = reports.process_fitness(squad1, main_file_path+'Fitness.xls')
+
+print(fitness_report)
 
 
 process_button = Button(root, text='Process reports', command=lambda: get_button_selected(a))
